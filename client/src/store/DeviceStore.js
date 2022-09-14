@@ -5,11 +5,15 @@ export default class DeviceStore {
     this._types = [
       { id: 1, name: "Холодильники" },
       { id: 2, name: "Смартфони" },
+      { id: 3, name: "Ноутбуки" },
+      { id: 4, name: "Телевізори" },
     ];
 
     this._brands = [
       { id: 1, name: "Samsung" },
       { id: 2, name: "Apple" },
+      { id: 3, name: "Lenovo" },
+      { id: 4, name: "Asus" },
     ];
 
     this._devices = [
@@ -20,7 +24,7 @@ export default class DeviceStore {
         rating: 0,
         img: "f1c98852-8326-4cff-ac34-09d117b6c742.jpg",
         typeId: 2,
-        brandId: 2,
+        brandId: 4,
       },
       {
         id: 4,
@@ -49,7 +53,19 @@ export default class DeviceStore {
         typeId: 2,
         brandId: 1,
       },
+      {
+        id: 7,
+        name: "ideapad 3",
+        price: 700,
+        rating: 0,
+        img: "3808a1c5-6f58-44d1-8d38-c2502548bf03.jpg",
+        typeId: 2,
+        brandId: 1,
+      },
     ];
+
+    this._selectedType = {};
+    this._selectedBrand = {};
 
     makeAutoObservable(this);
   }
@@ -66,6 +82,14 @@ export default class DeviceStore {
     this._devices = devices;
   }
 
+  setSelectedType(type) {
+    this._selectedType = type;
+  }
+
+  setSelectedBrand(brand) {
+    this._selectedBrand = brand;
+  }
+
   get types() {
     return this._types;
   }
@@ -76,5 +100,13 @@ export default class DeviceStore {
 
   get devices() {
     return this._devices;
+  }
+
+  get selectedType() {
+    return this._selectedType;
+  }
+
+  get selectedBrand() {
+    return this._selectedBrand;
   }
 }
