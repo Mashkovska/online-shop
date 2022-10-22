@@ -15,10 +15,6 @@ import {
 
 export const authRoutes = [
   {
-    path: ADMIN_ROUTE,
-    Component: <Admin />,
-  },
-  {
     path: BASKET_ROUTE,
     Component: <Basket />,
   },
@@ -40,5 +36,9 @@ export const publicRoutes = [
   {
     path: DEVICE_ROUTE + "/:id",
     Component: <DevicePage />,
+  },
+  {
+    path: ADMIN_ROUTE,
+    Component: <Admin />,
   },
 ];
